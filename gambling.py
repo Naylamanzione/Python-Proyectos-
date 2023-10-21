@@ -143,6 +143,7 @@ def main(balance):
     else:
         new_balance +=winnings
     print(f"Your balance is ${new_balance}")
+    return new_balance
 
 
             
@@ -152,15 +153,13 @@ def slots():
     if start.lower()=="no":
         quit()
     elif start.lower()=="yes":
-        balance=deposit()
-        while balance!=0:
+        while True:
+            balance=deposit()
             game=main(balance)
             play_again=input("Do you want to play again? (Yes/No): ")
             if play_again.lower()=="no":
               print("You have quit")
               quit()
-            else:
-                game=main(balance)
     else:
         print("Insert valid input")
            
